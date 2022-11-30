@@ -152,7 +152,6 @@ const Footer = () => {
       <Inner>
         <Logo width={100} negative />
         <FooterBottom>
-          <FooterLogos className="logos" />
           <div>
             <p>
               A 20k22 azzal a céllal alakult, hogy a 2022-es országgyűlési választásokon
