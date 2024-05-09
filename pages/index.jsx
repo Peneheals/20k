@@ -1,14 +1,16 @@
 import SeparatorBanner from "../components/SeparatorBanner"
 import Layout from '../components/Layout'
 import Section from "../components/Section"
-import Link from 'next/link'
 import Button from "../components/Button"
+import YellowHeroInner from "../components/HeroInner/YellowHeroInner";
+import WhiteHeroInner from "../components/HeroInner/WhiteHeroInner";
+import useCampaign from "../hooks/useCampaign";
 
-const IndexPage = () => {
+const IndexPage22 = () => {
   return (
     <Layout
       heroContent={
-        <>
+        <YellowHeroInner>
           <div>
             <h1>Köszönjük</h1>
           </div>
@@ -16,7 +18,7 @@ const IndexPage = () => {
           <div>
             <h2>hogy húszezren ott voltatok és felügyeltétek a tiszta választásokat!</h2>
           </div>
-        </>
+        </YellowHeroInner>
       }>
       <SeparatorBanner>
         <li>Megszervezzük</li>
@@ -65,10 +67,49 @@ const IndexPage = () => {
   )
 }
 
-export async function getServerSideProps(){
-  return { props: {
-    foo: 'bar'
-  } }
+const IndexPage24 = () => {
+  return (
+    <Layout
+      heroContent={
+        <WhiteHeroInner>
+          <WhiteHeroInner.H1Outer>
+            <h1>2024-ben is számolunk&thinsp;!</h1>
+          </WhiteHeroInner.H1Outer>
+          {/*<WhiteHeroInner.H2Outer>*/}
+          {/*  <h2>Hamarosan jelentkezünk <br/>a további teendőkkel</h2>*/}
+          {/*</WhiteHeroInner.H2Outer>*/}
+        </WhiteHeroInner>
+      }>
+      <SeparatorBanner>
+        <li>Megszervezzük</li>
+        <li>Biztosítjuk</li>
+        <li>Felügyeljük</li>
+        <li>Megszámoljuk</li>
+        <li>Közzétesszük</li>
+      </SeparatorBanner>
+
+      <Section>
+        <p>Azt valljuk, hogy egy ország demokratikus működésének alapja – mondhatni minimuma – a választások tisztasága. Ennek fontos garanciája a szavazás törvényességének minél szélesebb körű szavazatszámlálás általi felügyelete.</p>
+        <p>A 20k vállalt feladata a szavazatszámlálás folyamatának teljes támogatása. Ezek:</p>
+        <ul>
+          <li>szavazatszámlálók toborzása, képzése,</li>
+          <li>a szavazóköri beosztás és a delegálás folyamatának lebonyolítása,</li>
+          <li>a választás napjának informatikai és egyéb, önkéntesi infrastruktúrájának biztosítása,</li>
+          <li>szükség esetén az esetleges rendellenességek regisztrálásának támogatása és a jogorvoslati folyamat koordinálása.</li>
+          <li>Büszkék vagyunk arra, hogy 2022-ben több mint 20 ezer szavazatszámlálót toboroztunk, képeztünk és delegáltunk az ország 10 ezer pontjára!</li>
+        </ul>
+        <p>Június 9-én egy napon kerül sor az európai parlamenti és az önkormányzati választásokra. Célunk, hogy ezen a napon minél több településre szavazatszámlálókat delegáljunk.</p>
+      </Section>
+    </Layout>
+  )
 }
+
+
+const IndexPage = () => {
+  const { campaign } = useCampaign()
+  if (campaign.k22) return <IndexPage22 />
+  if (campaign.k24) return <IndexPage24 />
+}
+
 
 export default IndexPage

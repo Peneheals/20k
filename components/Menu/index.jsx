@@ -8,6 +8,7 @@ import MenuItem from './MenuItem'
 import { LG } from '../../styling/breakpoints'
 import MaterialMenuIcon from '../Icons/MaterialMenuIcon'
 import { Wrap as MenuItemWrap } from './MenuItem'
+import useCampaign from "../../hooks/useCampaign";
 
 const Inner = styled.div`
   ${container};
@@ -105,8 +106,85 @@ const Wrap = styled.nav`
   }
 `
 
-const Menu = ({ isBig = true }) => {
+const Menu24 = () => {
   const { pathname } = useRouter();
+
+  return (
+    <MenuWrap>
+      <MenuItem
+        href="/kik-vagyunk"
+        isActive={pathname === '/kik-vagyunk'}
+      >
+        Kik vagyunk?
+      </MenuItem>
+      <MenuItem
+        href="https://megcsinaltuk.20k.hu"
+        target="_new"
+      >
+        Megcsináltuk! – 2022
+      </MenuItem>
+      <MenuItem
+        href={process.env.NEXT_PUBLIC_REG_FORM_URL}
+        highlighted
+      >
+        Regisztráció
+      </MenuItem>
+    </MenuWrap>
+  )
+}
+
+const Menu22 = () => {
+  const { pathname } = useRouter();
+
+  return (
+    <MenuWrap>
+      <MenuItem
+        href="/hirek"
+        isActive={pathname === '/hirek'}
+      >
+        Hírek
+      </MenuItem>
+      <MenuItem
+        href="/kik-vagyunk"
+        isActive={pathname.includes('/kik-vagyunk')}
+      >
+        Kik vagyunk?
+      </MenuItem>
+      <MenuItem
+        href="/gyik"
+        isActive={pathname.includes('/gyik')}
+      >
+        GYIK
+      </MenuItem>
+      <MenuItem
+        href="/tamogatas"
+        isActive={pathname.includes('/tamogatas')}
+      >
+        Támogatás
+      </MenuItem>
+      <MenuItem
+        href="/videouzenetek"
+        isActive={pathname.includes('/videouzenetek')}
+      >
+        Videóüzenetek
+      </MenuItem>
+      <MenuItem
+        href="https://visszaeles.20k.hu"
+        highlighted
+      >
+        Választási visszaélés
+      </MenuItem>
+      <MenuItem
+        href="https://reg.20k.hu/belepes"
+      >
+        Belépés
+      </MenuItem>
+    </MenuWrap>
+  )
+}
+
+const Menu = ({ isBig = true }) => {
+  const { campaign } = useCampaign()
 
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
@@ -120,49 +198,12 @@ const Menu = ({ isBig = true }) => {
           <TopLogo />
         </Link>
         <MenuIcon onClick={() => setMobileNavOpen(!isMobileNavOpen)} />
-        <MenuWrap>
-          <MenuItem
-            href="/hirek"
-            isActive={pathname === '/hirek'}
-            >
-            Hírek
-          </MenuItem>
-          <MenuItem
-            href="/kik-vagyunk"
-            isActive={pathname.includes('/kik-vagyunk')}
-            >
-            Kik vagyunk?
-          </MenuItem>
-          <MenuItem
-            href="/gyik"
-            isActive={pathname.includes('/gyik')}
-            >
-            GYIK
-          </MenuItem>
-          <MenuItem
-            href="/tamogatas"
-            isActive={pathname.includes('/tamogatas')}
-            >
-            Támogatás
-          </MenuItem>
-          <MenuItem
-            href="/videouzenetek"
-            isActive={pathname.includes('/videouzenetek')}
-            >
-            Videóüzenetek
-          </MenuItem>
-          <MenuItem
-            href="https://visszaeles.20k.hu"
-            highlighted
-            >
-            Választási visszaélés
-          </MenuItem>
-          <MenuItem
-            href="https://reg.20k.hu/belepes"
-            >
-            Belépés
-          </MenuItem>          
-        </MenuWrap>
+        {campaign.k22 && (
+          <Menu22 />
+        )}
+        {campaign.k24 && (
+          <Menu24 />
+        )}
       </Inner>
     </Wrap>
   )

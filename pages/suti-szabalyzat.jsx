@@ -1,23 +1,24 @@
 import Layout from '../components/Layout'
 import Section from "../components/Section"
+import YellowHeroInner from "../components/HeroInner/YellowHeroInner";
 
 const IndexPage = () => {
   return (
     <Layout
       heroContent={
-        <>
+        <YellowHeroInner>
           <div>
             <h1>Süti szabályzat</h1>
           </div><br />
           <div>
             <h2>2021. 09. 18.</h2>
           </div>
-        </>
+        </YellowHeroInner>
       }>
       <Section>
         <div>
           <p>
-            A Tiszta Választásokért Alapítvány (székhelye: 1085 Budapest, Baross utca 36. 3/5., adószám: 19063438-1-42, a továbbiakban: TVA, vagy adatkezelő) által üzemeltetetett www.20k.hu oldalon (továbbiakban: "Honlap") ún. cookie-kat (magyarul: sütiket), illetve hasonló technológiai megoldásokat használ. Ezekre az alábbiakban összefoglalóan, mint cookie-kra, vagy sütikre hivatkozunk.
+            A Tiszta Választásokért Alapítvány (székhelye: 1085 Budapest, Baross utca 36. 3/5., adószám: 19063438-1-42, a továbbiakban: TVA, vagy adatkezelő) által üzemeltetetett www.20k.hu oldalon (továbbiakban: &quot;Honlap&quot;) ún. cookie-kat (magyarul: sütiket), illetve hasonló technológiai megoldásokat használ. Ezekre az alábbiakban összefoglalóan, mint cookie-kra, vagy sütikre hivatkozunk.
             A Honlap látogatása során Ön hozzájárulhat az oldalon alkalmazott sütik használatához a böngészési élmény javítása, illetve az érdeklődésének megfelelő, személyre szabott ajánlatok megjelenítése érdekében, bizonyos, az oldal működéséhez szükséges sütik azonban az Ön hozzájárulása nélkül is települnek. Ez az oldal tartalmazza az összes, sütik használatával kapcsolatos információt, amelyeket a Honlapon alkalmazunk.
           </p>
           <div>
