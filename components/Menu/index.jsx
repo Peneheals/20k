@@ -117,9 +117,7 @@ const Menu = ({ isBig = true }) => {
       >
       <Inner>
         <Link href="/">
-          <a>
-            <TopLogo />
-          </a>
+          <TopLogo />
         </Link>
         <MenuIcon onClick={() => setMobileNavOpen(!isMobileNavOpen)} />
         <MenuWrap>
