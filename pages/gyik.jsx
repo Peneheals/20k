@@ -52,6 +52,8 @@ export const getStaticProps = async () => {
     answer: await markdownToHtml(faq.answer),
   })))
 
+  console.log(faqs)
+
   return { props: {
     faqs
   } }
