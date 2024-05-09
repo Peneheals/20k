@@ -118,6 +118,12 @@ const Menu24 = () => {
         Kik vagyunk?
       </MenuItem>
       <MenuItem
+        href="/gyik"
+        isActive={pathname.includes('/gyik')}
+      >
+        GYIK
+      </MenuItem>
+      <MenuItem
         href="https://megcsinaltuk.20k.hu"
         target="_new"
       >
