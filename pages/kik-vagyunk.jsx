@@ -4,7 +4,6 @@ import Layout from '../components/Layout'
 import Logo from "../components/Logo"
 import Section from "../components/Section"
 import YellowHeroInner from "../components/HeroInner/YellowHeroInner";
-import WhiteHeroInner from "../components/HeroInner/WhiteHeroInner";
 import useCampaign from "../hooks/useCampaign";
 
 const WhoWeAre22 = () => {
@@ -53,14 +52,14 @@ const WhoWeAre24 = () => {
   return (
     <Layout
       heroContent={
-        <WhiteHeroInner>
-          <WhiteHeroInner.H1Outer>
-            <h1>2024-ben is számolunk&thinsp;!</h1>
-          </WhiteHeroInner.H1Outer>
-          {/*<WhiteHeroInner.H2Outer>*/}
-          {/*  <h2>Hamarosan jelentkezünk <br/>a további teendőkkel</h2>*/}
-          {/*</WhiteHeroInner.H2Outer>*/}
-        </WhiteHeroInner>
+        <YellowHeroInner>
+          <div>
+            <h1>Kik vagyunk?</h1>
+          </div><br />
+          <div>
+            <h2>Húszezer ember az ország tízezer pontján egy teljes napon át.</h2>
+          </div>
+        </YellowHeroInner>
       }>
 
       <Section>
