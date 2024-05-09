@@ -34,7 +34,7 @@ export default IndexPage
 export const getStaticProps = async () => {
   const response = await fetchAPI(`
     query {
-      faqs(stage: PUBLISHED, locales: [hu]) {
+      faqs(stage: ${process.env.GRAPHCMS_STAGE}, locales: [hu], where: {campaigns: ${process.env.CAMPAIGN}}) {
         id
         question
         answer
