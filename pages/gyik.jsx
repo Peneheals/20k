@@ -19,8 +19,8 @@ const IndexPage = ({ faqs }) => {
         </YellowHeroInner>
       }>
         {
-          faqs.map(({ question, answer, valaszHtml }) => (
-            <Section>
+          faqs.map(({ question, answer, valaszHtml, id }) => (
+            <Section key={id}>
               <h2>{question}</h2>
               <div dangerouslySetInnerHTML={{ __html: valaszHtml?.html || answer }} />
             </Section>
@@ -35,7 +35,7 @@ export default IndexPage
 export const getStaticProps = async () => {
   const response = await fetchAPI(`
     query {
-      faqs(stage: ${process.env.GRAPHCMS_STAGE}, locales: [hu], where: {campaigns: ${process.env.CAMPAIGN}}) {
+      faqs(stage: ${process.env.GRAPHCMS_STAGE}, locales: [hu], where: {campaigns: ${process.env.NEXT_PUBLIC_CAMPAIGN}}) {
         id
         question
         answer
