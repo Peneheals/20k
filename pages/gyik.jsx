@@ -2,20 +2,21 @@ import Layout from '../components/Layout'
 import Section from "../components/Section"
 import { fetchAPI } from '../lib/graphQlApi'
 import markdownToHtml from '../lib/markdownToHtml'
+import YellowHeroInner from "../components/HeroInner/YellowHeroInner";
 
 const IndexPage = ({ faqs }) => {
 
   return (
     <Layout
       heroContent={
-        <>
+        <YellowHeroInner>
           <div>
             <h1>GYIK</h1>
           </div><br />
           <div>
             <h2>Gyakran Ismételt Kérdések</h2>
           </div>
-        </>
+        </YellowHeroInner>
       }>
         {
           faqs.map(({ question, answer, valaszHtml }) => (

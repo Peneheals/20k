@@ -180,7 +180,7 @@ const Footer = () => {
               <li><a href="/about-us">About us</a></li>
               <li><a href="/tamogatas">Támogatás</a></li>
               <li><a href="/jelentkezz">Jelentkezés</a></li>
-              <li><a href={`${process.env.NEXT_PUBLIC_BASE}/videouzenetek`}>Videóüzenetek</a></li>
+              <li><a href="/videouzenetek">Videóüzenetek</a></li>
               <li><a href="https://reg.20k.hu/belepes">Belépés</a></li>
             </ul>
           </Nav>

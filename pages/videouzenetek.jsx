@@ -1,19 +1,20 @@
 import Layout from '../components/Layout'
 import Section from "../components/Section"
 import { fetchAPI } from '../lib/graphQlApi'
+import YellowHeroInner from "../components/HeroInner/YellowHeroInner";
 
 const IndexPage = ({ videomessages }) => {
   return (
     <Layout
       heroContent={
-        <>
+        <YellowHeroInner>
           <div>
             <h1>Videóüzenetek</h1>
           </div><br />
           <div>
             <h2>Szavazatszámlálókat kérdeztünk</h2>
           </div>
-        </>     
+        </YellowHeroInner>
       }
     >
       <Section>

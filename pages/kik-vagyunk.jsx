@@ -3,19 +3,20 @@ import Link from 'next/link'
 import Layout from '../components/Layout'
 import Logo from "../components/Logo"
 import Section from "../components/Section"
+import YellowHeroInner from "../components/HeroInner/YellowHeroInner";
 
 const IndexPage = () => {
   return (
     <Layout
       heroContent={
-        <>
+        <YellowHeroInner>
           <div>
             <h1>Kik vagyunk?</h1>
           </div><br />
           <div>
             <h2>Húszezer ember az ország tízezer pontján egy teljes napon át.</h2>
           </div>
-        </>
+        </YellowHeroInner>
       }>
       <Section>
         <Logo width={192} />

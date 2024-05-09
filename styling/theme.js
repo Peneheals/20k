@@ -7,7 +7,8 @@ const theme = {
   },
   grays: {
     dark: '#101B42',
-    light: '#E7E8EC'
+    light: '#E7E8EC',
+    white: '#FFFFFF'
   }
 }
 

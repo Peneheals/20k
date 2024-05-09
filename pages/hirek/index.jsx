@@ -5,19 +5,20 @@ import Section from "../../components/Section"
 import { fetchAPI } from '../../lib/graphQlApi'
 import Link from 'next/link'
 import NewsTopWrap from '../../components/NewsTopWrap'
+import YellowHeroInner from "../../components/HeroInner/YellowHeroInner";
 
 const IndexPage = ({ newss }) => {
 
   return (
     <Layout
       heroContent={
-        <>
+        <YellowHeroInner>
           <div>
             <h1>Hírek</h1>
           </div><br />
           <div>
           </div>
-        </>
+        </YellowHeroInner>
       }>
         {
           newss.map(({ id, cim, url, date, bevezeto, labels }) => (

@@ -148,7 +148,7 @@ const Menu = ({ isBig = true }) => {
             Támogatás
           </MenuItem>
           <MenuItem
-            href={`${process.env.NEXT_PUBLIC_BASE}/videouzenetek`}
+            href="/videouzenetek"
             isActive={pathname.includes('/videouzenetek')}
             >
             Videóüzenetek

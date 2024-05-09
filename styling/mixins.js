@@ -10,6 +10,15 @@ export const highlightText = css`
   border-right: 10px solid ${({ theme }) => theme.colors.secondary};
 `
 
+export const highlightTextWhite = css`
+  color: ${({ theme }) => theme.colors.text};
+  background: ${({ theme }) => theme.grays.white};
+  display: inline;
+  box-decoration-break: clone;
+  border-left: 10px solid ${({ theme }) => theme.grays.white};
+  border-right: 10px solid ${({ theme }) => theme.grays.white};
+`
+
 export const container = css`
   position: relative;
   max-width: 1200px;

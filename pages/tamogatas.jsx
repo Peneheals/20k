@@ -6,6 +6,7 @@ import Button from "../components/Button"
 import Row from "../components/Row"
 import Column from "../components/Column"
 import Box from "../components/Box"
+import YellowHeroInner from "../components/HeroInner/YellowHeroInner";
 
 const InfoBox = styled(Box)`
   width: 100%;
@@ -23,14 +24,14 @@ const IndexPage = () => {
   return (
     <Layout
       heroContent={
-        <>
+        <YellowHeroInner>
           <div>
             <h1>Támogasd te is a demokrácia őreit!</h1>
           </div>
           <div>
             <h2>Támogasd a 20k22 erőfeszítéseit, hogy még több emberhez eljussunk!</h2>
           </div>
-        </>
+        </YellowHeroInner>
       }>
       <Section>
         <Row>
