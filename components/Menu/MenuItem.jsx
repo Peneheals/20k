@@ -48,7 +48,7 @@ const MenuItem = ({ isActive, children, href, highlighted, hideOnLg, ...rest }) 
       $highlighted={highlighted}
       $hideOnLg={hideOnLg}
       >
-        {href.startsWith('http') && (
+        {href?.startsWith('http') && (
           <a
             href={href}
             {...rest}
@@ -56,7 +56,7 @@ const MenuItem = ({ isActive, children, href, highlighted, hideOnLg, ...rest }) 
             {children}
           </a>
         )}
-        {!href.startsWith('http') && (
+        {!href?.startsWith('http') && (
           <Link
             href={href}
             {...rest}

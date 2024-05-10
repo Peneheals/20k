@@ -1,12 +1,13 @@
 import Layout from '../components/Layout'
 import Section from "../components/Section"
 import { fetchAPI } from '../lib/graphQlApi'
+import YellowHeroInner from "../components/HeroInner/YellowHeroInner";
 
 const IndexPage = ({ page }) => {
   return (
     <Layout
       heroContent={
-        <>
+        <YellowHeroInner>
           <div>
             <h1>{page.cim}</h1>
           </div><br />
@@ -15,7 +16,7 @@ const IndexPage = ({ page }) => {
               <h2>{page.alcim}</h2>
             </div>
           )}
-        </>     
+        </YellowHeroInner>
       }
     >
       <Section dangerouslySetInnerHTML={{ __html: page.tartalom?.html }} />
