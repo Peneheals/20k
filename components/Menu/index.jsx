@@ -124,12 +124,6 @@ const Menu24 = () => {
         GYIK
       </MenuItem>
       <MenuItem
-        href="https://megcsinaltuk.20k.hu"
-        target="_new"
-      >
-        Megcsináltuk! – 2022
-      </MenuItem>
-      <MenuItem
         href={process.env.NEXT_PUBLIC_REG_FORM_URL}
         highlighted
       >
