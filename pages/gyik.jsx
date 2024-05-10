@@ -35,7 +35,7 @@ export default IndexPage
 export const getServerSideProps = async () => {
   const response = await fetchAPI(`
     query {
-      faqs(stage: ${process.env.GRAPHCMS_STAGE}, locales: [hu], where: {campaigns: ${process.env.NEXT_PUBLIC_CAMPAIGN}}) {
+      faqs(stage: ${process.env.GRAPHCMS_STAGE}, locales: [hu], where: {campaigns_contains_some: ${process.env.NEXT_PUBLIC_CAMPAIGN}}) {
         id
         question
         answer
