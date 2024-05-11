@@ -220,7 +220,7 @@ const Footer24 = () => {
           <Nav className="cookies">
             <ul>
               <li><Link href="/suti-szabalyzat">Süti szabályzat</Link></li>
-              <li><Link href="/adatvedelem" target="_new">Adatvédelem</Link></li>
+              <li><Link href="/adatkezeles" target="_new">Adatkezelés</Link></li>
             </ul>
           </Nav>
           <Nav className="pages">
