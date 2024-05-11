@@ -27,11 +27,10 @@ const IndexPage = ({ page }) => {
 export default IndexPage
 
 export const getStaticProps = async ({ params }) => {
-  
   const response = await fetchAPI(`
-    query ($slug: String!) {
-      page(where: {url: $slug}){
-        id
+    query SinglePage($campaign: [Campaigns!], $stage: Stage!, $url: String!) {
+      pages(where: {campaigns: $campaign, url: $url}, stage: $stage) {
+       id
         cim
         alcim
         tartalom{
@@ -40,21 +39,33 @@ export const getStaticProps = async ({ params }) => {
       }
     }
   `,
-    { variables: { "slug": params.slug }}
+    {
+      variables: {
+        "stage": process.env.GRAPHCMS_STAGE,
+        "campaign": [process.env.NEXT_PUBLIC_CAMPAIGN],
+        "url": params.slug
+      }
+    }
   )
 
-
-  return { props: response }
+  return { props: { page: response.pages[0] } }
 }
 
 export const getStaticPaths = async () => {
   const response = await fetchAPI(`
-    {
-      pages(stage: ${process.env.GRAPHCMS_STAGE}){
+    query AllPages($campaign: [Campaigns!], $stage: Stage!) {
+      pages(where: {campaigns: $campaign}, stage: $stage) {
+        id
         url
       }
     }
-  `)
+  `,
+    {
+      variables: {
+        "stage": process.env.GRAPHCMS_STAGE,
+        "campaign": [process.env.NEXT_PUBLIC_CAMPAIGN],
+      }
+    })
 
   return {
     paths: response.pages.map(({ url }) => ({ params: { slug: url }})),
