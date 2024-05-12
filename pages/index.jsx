@@ -89,6 +89,7 @@ const IndexPage24 = () => {
       </SeparatorBanner>
 
       <Section>
+        <h2>Megérdemeljük, hogy megbízhassunk a választásaink eredményében!</h2>
         <p>Azt valljuk, hogy egy ország demokratikus működésének alapja – mondhatni minimuma – a választások tisztasága. Ennek fontos garanciája a szavazás törvényességének minél szélesebb körű szavazatszámlálás általi felügyelete.</p>
         <p>A 20k vállalt feladata a szavazatszámlálás folyamatának teljes támogatása. Ezek:</p>
         <ul>
