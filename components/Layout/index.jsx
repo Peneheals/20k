@@ -47,8 +47,8 @@ const Layout = ({
     height: 536,
     alt: '20K - 20 ezren a tiszta választásért. Csatlakozz!',
   },
-  metaTitle = '20K22',
-  metaDescription = 'Húszezren a tiszta szavazásért 2022-ben',
+  metaTitle = '20K',
+  metaDescription = 'Húszezren a tiszta szavazásért',
 }) => {
   const [isMenuBig, setMenuBig] = useState(true)
 
