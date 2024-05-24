@@ -3,12 +3,12 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { container } from '../../styling/mixins'
 import Logo from '../Logo'
-import { useRouter } from "next/router"
+import { useRouter } from 'next/router'
 import MenuItem from './MenuItem'
 import { LG } from '../../styling/breakpoints'
 import MaterialMenuIcon from '../Icons/MaterialMenuIcon'
 import { Wrap as MenuItemWrap } from './MenuItem'
-import useCampaign from "../../hooks/useCampaign";
+import useCampaign from '../../hooks/useCampaign'
 
 const Inner = styled.div`
   ${container};
@@ -29,12 +29,15 @@ const MenuIcon = styled(MaterialMenuIcon)`
 `
 
 const Wrap = styled.nav`
-  transition: .3s;
+  transition: 0.3s;
   font-family: 'Poppins', sans-serif;
-  background-color: ${({ theme, $isBig }) => theme.colors[$isBig ? 'primary' : 'negative'] };
-  border-bottom: 1px solid ${({ theme, $isBig }) => $isBig ? theme.colors.negative : theme.grays.light}88;
+  background-color: ${({ theme, $isBig }) =>
+    theme.colors[$isBig ? 'primary' : 'negative']};
+  border-bottom: 1px solid
+    ${({ theme, $isBig }) =>
+      $isBig ? theme.colors.negative : theme.grays.light}88;
   position: sticky;
-  height: ${({ $isBig }) => $isBig ? '80px' : '60px' };
+  height: ${({ $isBig }) => ($isBig ? '80px' : '60px')};
   top: 0;
   z-index: 4;
 
@@ -44,26 +47,28 @@ const Wrap = styled.nav`
     gap: 14px;
   }
 
-  ${MenuItemWrap}{
-      a {
-        color: ${({ theme, $isBig }) => theme.colors[$isBig ? 'negative' : 'text'] };
-      }
+  ${MenuItemWrap} {
+    a {
+      color: ${({ theme, $isBig }) =>
+        theme.colors[$isBig ? 'negative' : 'text']};
+    }
 
-      &.active a {
-        border-color: ${({ theme, $isBig }) => $isBig ? theme.colors.negative :  theme.colors.text };
-      }      
-    }  
+    &.active a {
+      border-color: ${({ theme, $isBig }) =>
+        $isBig ? theme.colors.negative : theme.colors.text};
+    }
+  }
 
-  @media(max-width: ${LG}){
+  @media (max-width: ${LG}) {
     background: white;
     height: 48px;
-    border-bottom: 1px solid ${({ theme }) => theme.grays.light };
+    border-bottom: 1px solid ${({ theme }) => theme.grays.light};
 
-    ${TopLogo}{
+    ${TopLogo} {
       height: 24px;
     }
 
-    ${MenuIcon}{
+    ${MenuIcon} {
       display: block;
     }
 
@@ -76,23 +81,25 @@ const Wrap = styled.nav`
       left: 0;
       width: 100%;
       overflow: hidden;
-      transition: .3s;
+      transition: 0.3s;
       justify-content: flex-start;
-      
-      
-      ${({ $isOpenOnMobile }) => $isOpenOnMobile ? `
+
+      ${({ $isOpenOnMobile }) =>
+        $isOpenOnMobile
+          ? `
         max-height: 100vh;
         height: calc(100vh - 88px);
-        padding: 20px 0 40px;        
-      ` : `
+        padding: 20px 0 40px;
+      `
+          : `
         max-height: 0;
         padding: 0;
       `}
     }
 
-    ${MenuItemWrap}{
+    ${MenuItemWrap} {
       padding: 5px 8px;
-      
+
       a {
         border: none;
         color: ${({ theme }) => theme.colors.text};
@@ -100,33 +107,27 @@ const Wrap = styled.nav`
 
         &:hover {
           color: inherit;
-        }     
-      }    
+        }
+      }
     }
   }
 `
 
 const Menu24 = () => {
-  const { pathname } = useRouter();
+  const { pathname } = useRouter()
 
   return (
     <MenuWrap>
-      <MenuItem
-        href="/kik-vagyunk"
-        isActive={pathname === '/kik-vagyunk'}
-      >
+      <MenuItem href="/kepzes" isActive={pathname.includes('/kepzes')}>
+        Felkészítés
+      </MenuItem>
+      <MenuItem href="/kik-vagyunk" isActive={pathname === '/kik-vagyunk'}>
         Kik vagyunk?
       </MenuItem>
-      <MenuItem
-        href="/gyik"
-        isActive={pathname.includes('/gyik')}
-      >
+      <MenuItem href="/gyik" isActive={pathname.includes('/gyik')}>
         GYIK
       </MenuItem>
-      <MenuItem
-        href={process.env.NEXT_PUBLIC_REG_FORM_URL}
-        highlighted
-      >
+      <MenuItem href={process.env.NEXT_PUBLIC_REG_FORM_URL} highlighted>
         Regisztráció
       </MenuItem>
     </MenuWrap>
@@ -134,14 +135,11 @@ const Menu24 = () => {
 }
 
 const Menu22 = () => {
-  const { pathname } = useRouter();
+  const { pathname } = useRouter()
 
   return (
     <MenuWrap>
-      <MenuItem
-        href="/hirek"
-        isActive={pathname === '/hirek'}
-      >
+      <MenuItem href="/hirek" isActive={pathname === '/hirek'}>
         Hírek
       </MenuItem>
       <MenuItem
@@ -150,16 +148,10 @@ const Menu22 = () => {
       >
         Kik vagyunk?
       </MenuItem>
-      <MenuItem
-        href="/gyik"
-        isActive={pathname.includes('/gyik')}
-      >
+      <MenuItem href="/gyik" isActive={pathname.includes('/gyik')}>
         GYIK
       </MenuItem>
-      <MenuItem
-        href="/tamogatas"
-        isActive={pathname.includes('/tamogatas')}
-      >
+      <MenuItem href="/tamogatas" isActive={pathname.includes('/tamogatas')}>
         Támogatás
       </MenuItem>
       <MenuItem
@@ -168,17 +160,10 @@ const Menu22 = () => {
       >
         Videóüzenetek
       </MenuItem>
-      <MenuItem
-        href="https://visszaeles.20k.hu"
-        highlighted
-      >
+      <MenuItem href="https://visszaeles.20k.hu" highlighted>
         Választási visszaélés
       </MenuItem>
-      <MenuItem
-        href="https://reg.20k.hu/belepes"
-      >
-        Belépés
-      </MenuItem>
+      <MenuItem href="https://reg.20k.hu/belepes">Belépés</MenuItem>
     </MenuWrap>
   )
 }
@@ -186,24 +171,17 @@ const Menu22 = () => {
 const Menu = ({ isBig = true }) => {
   const { campaign } = useCampaign()
 
-  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
+  const [isMobileNavOpen, setMobileNavOpen] = useState(false)
 
   return (
-    <Wrap
-      $isOpenOnMobile={isMobileNavOpen}
-      $isBig={isBig}
-      >
+    <Wrap $isOpenOnMobile={isMobileNavOpen} $isBig={isBig}>
       <Inner>
         <Link href="/">
           <TopLogo />
         </Link>
         <MenuIcon onClick={() => setMobileNavOpen(!isMobileNavOpen)} />
-        {campaign.k22 && (
-          <Menu22 />
-        )}
-        {campaign.k24 && (
-          <Menu24 />
-        )}
+        {campaign.k22 && <Menu22 />}
+        {campaign.k24 && <Menu24 />}
       </Inner>
     </Wrap>
   )
