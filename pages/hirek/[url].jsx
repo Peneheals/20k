@@ -50,8 +50,8 @@ export default IndexPage
 
 export const getStaticProps = async ({ params }) => {
   const response = await fetchAPI(`
-    {
-      news(stage: PUBLISHED, locales: [hu], where: { url: "${params.url}" }) {
+    query NewsQuery($url: String!){
+      news(stage: PUBLISHED, locales: [hu], where: { url: $url }) {
         id
         cim
         date
@@ -59,7 +59,7 @@ export const getStaticProps = async ({ params }) => {
           html
         }
         ogImage {
-					fileName
+          fileName
           url
           width
           height
@@ -74,7 +74,11 @@ export const getStaticProps = async ({ params }) => {
         }        
       }
     }
-  `)
+  `, {
+    variables: {
+      url: params.url
+    }
+  })
 
   return {
     props: response
@@ -83,12 +87,16 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const response = await fetchAPI(`
-    {
-      newss(stage: PUBLISHED, locales: [hu]) {
+    query AllNews($campaign: [Campaigns!]) {
+      newss(stage: PUBLISHED, locales: [hu], where: { campaigns: $campaign }) {
         url
       }
-    }  
-  `)
+    } 
+  `, {
+    variables: {
+      "campaign": [process.env.NEXT_PUBLIC_CAMPAIGN]
+    }
+  })
 
   return {
     paths: response.newss.map(({ url }) => ({
