@@ -127,7 +127,7 @@ const Menu24 = () => {
       <MenuItem href="/gyik" isActive={pathname.includes('/gyik')}>
         GYIK
       </MenuItem>
-      <MenuItem href={process.env.NEXT_PUBLIC_REG_FORM_URL} highlighted>
+      <MenuItem href="/jelentkezes-lezarult" highlighted>
         Regisztráció
       </MenuItem>
     </MenuWrap>
@@ -176,7 +176,7 @@ const Menu = ({ isBig = true }) => {
   return (
     <Wrap $isOpenOnMobile={isMobileNavOpen} $isBig={isBig}>
       <Inner>
-        <Link href="/">
+        <Link href="/" passHref>
           <TopLogo />
         </Link>
         <MenuIcon onClick={() => setMobileNavOpen(!isMobileNavOpen)} />
