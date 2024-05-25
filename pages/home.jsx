@@ -47,7 +47,7 @@ const IndexPage = () => {
           Kik vagyunk?
         </h2>
         <p>
-          A legkülönfélébb iparágakban dolgozó, magyar, az ország és a világ különböző pontjain élő tapasztalt szakemberek vagyunk. Csapatunk a Tiszta Választásokért Alapítvány önkéntesei.
+          A legkülönfélébb iparágakban dolgozó, az ország és a világ különböző pontjain élő tapasztalt magyar szakemberek vagyunk. Csapatunk tagjai a Tiszta Választásokért Alapítvány önkéntesei.
         </p>
 
         <Image alt="tiszta valasztasokert alapitvany logo" width={300} height={102.42} src="/tisztavalasztaslogo.png" />
