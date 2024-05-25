@@ -27,7 +27,9 @@ const IndexPage = ({ page }) => {
 export default IndexPage
 
 export const getStaticProps = async ({ params }) => {
-  const response = await fetchAPI(`
+  let response = { pages: [] }
+  try {
+    response = await fetchAPI(`
     query SinglePage($campaign: [Campaigns!], $stage: Stage!, $url: String!) {
       pages(where: {campaigns: $campaign, url: $url}, stage: $stage) {
        id
@@ -39,14 +41,17 @@ export const getStaticProps = async ({ params }) => {
       }
     }
   `,
-    {
-      variables: {
-        "stage": process.env.GRAPHCMS_STAGE,
-        "campaign": [process.env.NEXT_PUBLIC_CAMPAIGN],
-        "url": params.slug
+      {
+        variables: {
+          "stage": process.env.GRAPHCMS_STAGE,
+          "campaign": [process.env.NEXT_PUBLIC_CAMPAIGN],
+          "url": params.slug
+        }
       }
-    }
-  )
+    )
+  } catch (error){
+    console.log(error)
+  }
 
   return { props: { page: response.pages[0] } }
 }
