@@ -996,3 +996,6 @@ body:not(.is-touchable-tablet) .cs-pxnanbnsnfns00001100101 .cs-button:hover .tex
 .cs-ExternalInterfaceErrorSlide .cs-buttonOK:active {
   background: rgba(68, 68, 68, 1);
 }
+[data-acc-text="KILÉPEK"] {
+    display: none;
+}
