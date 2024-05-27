@@ -33,7 +33,7 @@ export default function ModulePage() {
     >
       <Section>
         <div style={{ marginBottom: 20 }}>
-          <Link href="/kepzes">vissza a modullistára</Link>
+          <Link href="/pages/felkeszites">vissza a modullistára</Link>
         </div>
         {showQuestions ? (
           <Questions questions={questions} />
@@ -57,7 +57,7 @@ export default function ModulePage() {
           {modulok.length > indexNum && (
             <Button
               secondary
-              onClick={() => router.push(`/kepzes/modul/${1 + indexNum}`)}
+              onClick={() => router.push(`/felkeszites/modul/${1 + indexNum}`)}
             >
               Következő modul
             </Button>

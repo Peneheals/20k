@@ -118,7 +118,7 @@ const Menu24 = () => {
 
   return (
     <MenuWrap>
-      <MenuItem href="/kepzes" isActive={pathname.includes('/kepzes')}>
+      <MenuItem href="/felkeszites" isActive={pathname.includes('/kepzes')}>
         Felkészítés
       </MenuItem>
       <MenuItem href="/kik-vagyunk" isActive={pathname === '/kik-vagyunk'}>

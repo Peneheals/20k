@@ -226,6 +226,7 @@ const Footer24 = () => {
           <Nav className="pages">
             <ul>
               <li><Link href="/">Főoldal</Link></li>
+              <li><Link href="/felkeszites">Felkészítés</Link></li>
               <li><Link href="/kik-vagyunk">Kik vagyunk?</Link></li>
               <li><Link href="https://megcsinaltuk.20k.hu" target="_new">Megcsináltuk</Link></li>
             </ul>

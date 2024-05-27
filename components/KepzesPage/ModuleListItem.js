@@ -16,7 +16,7 @@ export default function ModuleListItem({ index, title }) {
       </p>
       <Button
         style={{ marginLeft: 20 }}
-        onClick={() => router.push(`/kepzes/modul/${index}`)}
+        onClick={() => router.push(`/felkeszites/modul/${index}`)}
       >
         Kezdés
       </Button>
