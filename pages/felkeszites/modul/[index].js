@@ -57,7 +57,10 @@ export default function ModulePage() {
           {modulok.length > indexNum && (
             <Button
               secondary
-              onClick={() => router.push(`/felkeszites/modul/${1 + indexNum}`)}
+              onClick={() => {
+                setShowQuestions(false)
+                router.push(`/felkeszites/modul/${1 + indexNum}`)
+              }}
             >
               Következő modul
             </Button>
