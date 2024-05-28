@@ -33,7 +33,7 @@ export default function ModulePage() {
     >
       <Section>
         <div style={{ marginBottom: 20 }}>
-          <Link href="/pages/felkeszites">vissza a modullistára</Link>
+          <Link href="/felkeszites">vissza a modullistára</Link>
         </div>
         {showQuestions ? (
           <Questions questions={questions} />
