@@ -65,6 +65,13 @@ export default function ModulePage() {
               Következő modul
             </Button>
           )}
+          <div style={{ marginLeft: 20 }}>
+            <Link passHref href="/letoltesek/szszb-osszefoglalo.pdf" target="_new">
+              <Button negative>
+                Nyomtatható verzió
+              </Button>
+            </Link>
+          </div>
         </div>
       </Section>
     </Layout>
