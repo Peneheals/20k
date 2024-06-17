@@ -11,7 +11,7 @@ const IndexPage = () => {
       heroContent={
         <WhiteHeroInner>
           <WhiteHeroInner.H1Outer>
-            <h1>2024-ben is számolunk&thinsp;!</h1>
+            <h1>2022-ben és 2024-ben is számoltunk&thinsp;!</h1>
           </WhiteHeroInner.H1Outer>
           <WhiteHeroInner.H2Outer>
             <h2>Hamarosan jelentkezünk <br/>a további teendőkkel</h2>

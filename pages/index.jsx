@@ -73,7 +73,7 @@ const IndexPage24 = () => {
       heroContent={
         <WhiteHeroInner>
           <WhiteHeroInner.H1Outer>
-            <h1>2024-ben is számolunk&thinsp;!</h1>
+            <h1>2022-ben és 2024-ben is számoltunk&thinsp;!</h1>
           </WhiteHeroInner.H1Outer>
           {/*<WhiteHeroInner.H2Outer>*/}
           {/*  <h2>Hamarosan jelentkezünk <br/>a további teendőkkel</h2>*/}
@@ -97,9 +97,8 @@ const IndexPage24 = () => {
           <li>a szavazóköri beosztás és a delegálás folyamatának lebonyolítása,</li>
           <li>a választás napjának informatikai és egyéb, önkéntesi infrastruktúrájának biztosítása,</li>
           <li>szükség esetén az esetleges rendellenességek regisztrálásának támogatása és a jogorvoslati folyamat koordinálása.</li>
-          <li>Büszkék vagyunk arra, hogy 2022-ben több mint 20 ezer szavazatszámlálót toboroztunk, képeztünk és delegáltunk az ország 10 ezer pontjára!</li>
+          <li>Büszkék vagyunk arra, hogy 2022-ben több mint 20 ezer szavazatszámlálót toboroztunk, képeztünk és delegáltunk az ország 10 ezer pontjára, és hogy a 2024-es európai parlamenti és önkormányzati választásokra is biztosítottunk szavazatszámálókat!</li>
         </ul>
-        <p>Június 9-én egy napon kerül sor az európai parlamenti és az önkormányzati választásokra. Célunk, hogy ezen a napon minél több településre szavazatszámlálókat delegáljunk.</p>
       </Section>
     </Layout>
   )
