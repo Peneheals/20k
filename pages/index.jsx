@@ -102,7 +102,7 @@ const IndexPage24 = () => {
         </ul>
         <br />
         <br />
-        <h2>Civil Választási Jelentés</h2>
+        <h2>Magyar civil választási jelentés</h2>
         <p>A 2024-es civil választási jelentés a legjelentősebb, választásokkal foglalkozó hazai szervezetek: a
           20k, a Magyar Helsinki Bizottság, a Mérték Médiaelemző Műhely, a Political Capital, a Társaság a
           Szabadságjogokért és az Unhack Democracy közös kezdeményezése nyomán jött létre.</p>
