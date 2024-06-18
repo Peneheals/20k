@@ -5,6 +5,7 @@ import Button from "../components/Button"
 import YellowHeroInner from "../components/HeroInner/YellowHeroInner";
 import WhiteHeroInner from "../components/HeroInner/WhiteHeroInner";
 import useCampaign from "../hooks/useCampaign";
+import Link from "next/link";
 
 const IndexPage22 = () => {
   return (
@@ -99,6 +100,16 @@ const IndexPage24 = () => {
           <li>szükség esetén az esetleges rendellenességek regisztrálásának támogatása és a jogorvoslati folyamat koordinálása.</li>
           <li>Büszkék vagyunk arra, hogy 2022-ben több mint 20 ezer szavazatszámlálót toboroztunk, képeztünk és delegáltunk az ország 10 ezer pontjára, és hogy a 2024-es európai parlamenti és önkormányzati választásokra is biztosítottunk szavazatszámálókat!</li>
         </ul>
+        <br />
+        <br />
+        <h2>Civil Választási Jelentés</h2>
+        <p>A 2024-es civil választási jelentés a legjelentősebb, választásokkal foglalkozó hazai szervezetek: a
+          20k, a Magyar Helsinki Bizottság, a Mérték Médiaelemző Műhely, a Political Capital, a Társaság a
+          Szabadságjogokért és az Unhack Democracy közös kezdeményezése nyomán jött létre.</p>
+        <br />
+        <Link passHref href="/letoltesek/civil-valasztasi-jelentes.pdf" target="_new">
+          <Button>Elolvasom a jelentést</Button>
+        </Link>
       </Section>
     </Layout>
   )
