@@ -110,6 +110,11 @@ const IndexPage24 = () => {
         <Link passHref href="/letoltesek/civil-valasztasi-jelentes.pdf" target="_new">
           <Button>Elolvasom a jelentést</Button>
         </Link>
+        <Link passHref href="/letoltesek/2024-hungarian-citizen-election-report.pdf" target="_new">
+          <Button negative>
+            Elolvasom angolul
+          </Button>
+        </Link>
       </Section>
     </Layout>
   )
