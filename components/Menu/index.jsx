@@ -127,9 +127,9 @@ const Menu24 = () => {
       <MenuItem href="/gyik" isActive={pathname.includes('/gyik')}>
         GYIK
       </MenuItem>
-      <MenuItem href="/jelentkezes-lezarult" highlighted>
-        Regisztráció
-      </MenuItem>
+ {/*     <MenuItem target="_new" href="https://7vewalefl2q.typeform.com/20k24#user_id=xxxxx&source=webpage" highlighted>
+        Előregisztráció | 2026
+      </MenuItem>*/}
     </MenuWrap>
   )
 }
