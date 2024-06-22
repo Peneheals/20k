@@ -112,7 +112,7 @@ const IndexPage24 = () => {
         </Link>
         <Link passHref href="/letoltesek/2024-hungarian-citizen-election-report.pdf" target="_new">
           <Button negative>
-            I read the report in English
+            Read the report in English
           </Button>
         </Link>
       </Section>
