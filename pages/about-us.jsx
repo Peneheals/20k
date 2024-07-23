@@ -2,8 +2,9 @@ import Layout from '../components/Layout'
 import Logo from "../components/Logo"
 import Section from "../components/Section"
 import Head from "next/head"
+import YellowHeroInner from "../components/HeroInner/YellowHeroInner";
 
-const IndexPage = () => {
+const AboutUsPage = () => {
   return (
     <>
       <Head>
@@ -11,14 +12,14 @@ const IndexPage = () => {
       </Head>    
       <Layout
         heroContent={
-          <>
+          <YellowHeroInner>
             <div>
               <h1>2022 - Free Election In The Polling Stations!</h1>
             </div><br />
             <div>
               <h2>20k22 - 20,000 Delegated Poll-Watchers in ‘22</h2>
             </div>
-          </>
+          </YellowHeroInner>
         }>
         <Section>
           <Logo width={192} />
@@ -72,4 +73,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default AboutUsPage
