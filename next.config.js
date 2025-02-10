@@ -1,26 +1,7 @@
-// const securityHeaders = [
-//   {
-//     key: 'Content-Security-Policy',
-//     value: `\
-//       default-src 'self' 'unsafe-eval';\
-//       font-src fonts.gstatic.com fonts.googleapis.com;\
-//       style-src 'self' 'unsafe-inline' fonts.googleapis.com;\
-//       img-src 'self' data: www.googletagmanager.com;\
-//       script-src 'self' 'unsafe-eval' 'unsafe-inline';\
-//     `
-//   }
-// ]
-
-module.exports = {
-  // async headers() {
-  //   return [
-  //     {
-  //       // Apply these headers to all routes in your application.
-  //       source: '/(.*)',
-  //       headers: securityHeaders,
-  //     },
-  //   ]
-  // },
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
   /**
    * Enable static exports.
    *
@@ -34,6 +15,15 @@ module.exports = {
    * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
    */
   basePath: "/nextjs-github-pages",
+
+  // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
+  // trailingSlash: true,
+
+  // Optional: Prevent automatic `/me` -> `/me/`, instead preserve `href`
+  // skipTrailingSlashRedirect: true,
+
+  // Optional: Change the output directory `out` -> `dist`
+  // distDir: 'dist',
 
   images: {
     domains: ['media.graphcms.com', 'mobil.20k.hu', 'media.20k.hu'],
@@ -61,3 +51,5 @@ module.exports = {
     }))
   },
 }
+
+module.exports = nextConfig
