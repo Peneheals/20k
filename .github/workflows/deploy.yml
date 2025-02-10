@@ -50,6 +50,23 @@ jobs:
             exit 1
           fi
 
+      # https://github.com/marketplace/actions/create-env-file
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@v2
+        with:
+          envkey_NEXT_PUBLIC_REG_DOMAIN:
+          envkey_NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID:
+          envkey_NEXT_PUBLIC_GA_ID:
+          envkey_NEXT_PUBLIC_FACEBOOK_PIXEL_ID:
+          envkey_API_URL: ${{ secrets.API_URL }}
+          envkey_GRAPHCMS_STAGE: ${{ secrets.GRAPHCMS_STAGE }}
+          envkey_GRAPHQL_BEARER_TOKEN: ${{ secrets.GRAPHQL_BEARER_TOKEN }}
+          envkey_NEXT_PUBLIC_CAMPAIGN: ${{ secrets.NEXT_PUBLIC_CAMPAIGN }}
+          envkey_NEXT_PUBLIC_REG_FORM_URL: ${{ secrets.NEXT_PUBLIC_REG_FORM_URL }}
+          file_name: .env
+          fail_on_empty: false
+          sort_keys: false
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
